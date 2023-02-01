@@ -1,5 +1,5 @@
 import React from 'react'
-import headphone from '../../assets/icon.svg'
+import headphone from '/icon.svg'
 
 interface IProps {
     img?:any,
@@ -13,8 +13,8 @@ export const CardImgDesc = ({img={headphone}, title='Titulo', desc='Lorem ipsum 
     <div className='card' style={{backgroundColor:'whitesmoke'}}>
         <div className="card-header">
             ​<picture className='d-flex'>
-                <source srcSet={'../../../public/icon.svg'} type="image/svg+xml" style={{width: '100%',height: 'auto'}}/>
-                <img src={'../../../public/icon.svg'} alt="MDN" style={{height: 'auto',width: '100%'}}/>
+                <source srcSet={headphone} type="image/svg+xml" style={{width: '100%',height: 'auto'}}/>
+                <img src={headphone} alt="MDN" style={{height: 'auto',width: '100%'}}/>
             </picture>
         </div>
         <div style={{backgroundColor:'#f0f0f0'}} className='p-1'>

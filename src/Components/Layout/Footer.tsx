@@ -34,7 +34,7 @@ export const Footer = () => {
                             if (biip?.outcome === 'accepted') {setBip(null)}
                         }
                     }}
-                    className='btn p-1' style={{backgroundColor:'coral', color:'whitesmoke'}}>Instalar</button> : <></> }
+                    className='btn p-1' style={{backgroundColor:'coral', color:'whitesmoke', position:'absolute', bottom:'1em', right:'2em'}}>Instalar</button> : <></> }
                     </div>
                 </div>
             </div>            

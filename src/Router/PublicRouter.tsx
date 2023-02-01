@@ -13,7 +13,7 @@ import { Nuevo } from '../Pages/Nuevo'*/
 
 export const PublicRouter = () => {
   const location = useLocation()
-  HeadTitleUrl(location.pathname, 'Lista Compras')
+  HeadTitleUrl(location.pathname, 'Inicio')
   return (
     <Routes>
         <Route index element={<Inicio/>}></Route>
