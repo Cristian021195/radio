@@ -218,6 +218,11 @@ table tr td, table tr th{
   }
   footer{
     bottom:-7em;
+    text-align: end;
+  }
+  label>input{
+    display: block!important;
+    width: 9em;
   }
 }
 
