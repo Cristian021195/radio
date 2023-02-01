@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { IPreset, ISelected, ISelector } from '../../Interfaces';
 
@@ -6,6 +7,7 @@ export const MainPlayer = () => {
     const selected = useSelector((state: ISelected)=>state.selected);
     const volume = useSelector((state: any)=>state.volume);
     const dispatch = useDispatch();
+    const [customError, setCustomError] = useState();
     //const radio = useSelector((state: any)=>state.radio);
     //console.log(radio)
     /*useEffect(()=>{
@@ -25,7 +27,11 @@ export const MainPlayer = () => {
                     }}>■</button>
                     <button className='circle outlined sq-dim-xl m-3' onClick={()=>{
                         dispatch({type:'PLAY', payload:{...selected}})
-                        radio?.radio.play();
+                        radio?.radio.play().then((res:any)=>{
+                            setCustomError(undefined)
+                        }).catch((error:any)=>{
+                            setCustomError(error)
+                        })
                     }}>▶</button>
                     <button className='circle outlined sq-dim-md m-3' onClick={()=>{
                         dispatch({type:'PAUSE', payload:{}})
@@ -53,6 +59,10 @@ export const MainPlayer = () => {
                         />
                     </div>
                 </div>
+                {customError ? 
+                    <div style={{backgroundColor:'#fcb3b1', borderRadius:'0.3em', padding:'0.2em', marginTop:'1em', border:'solid 1px #faa09d'}}>
+                        <p><b>Error de URL: </b> (url incompleta, o no es de formato stream)</p></div> : 
+                    <></>}
             </div>
         </article>
     )

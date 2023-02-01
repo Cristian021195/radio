@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useRadioSet } from '../../Hooks'
+import { ISelected } from '../../Interfaces';
 
 export const FooterPlayer = () => {
     const radio = useSelector((state: any)=>state.radio);
     const volume = useSelector((state: any)=>state.volume);
+    const selected = useSelector((state: ISelected)=>state.selected);
     const dispatch = useDispatch();
     /*useEffect(()=>{
         dispatch({type:'PLAY', payload:{message:'asd'}})
@@ -18,8 +20,10 @@ export const FooterPlayer = () => {
                     radio?.radio.pause();radio?.radio.load();
                 }} className='circle sq-dim-sm m-2'>■</button>
                 <button onClick={()=>{
-                    dispatch({type:'PLAY', payload:{}})
-                    radio?.radio.play();
+                    dispatch({type:'PLAY', payload:{...selected}})
+                    radio?.radio.play().then((res:any)=>{}).catch((error:any)=>{
+                        alert(`${error} - Error de URL: (url incompleta, o no es de formato stream)`)
+                    })
                 }} className='circle sq-dim-md m-2'>▶</button>
                 <button onClick={()=>{
                     dispatch({type:'PAUSE', payload:{}})

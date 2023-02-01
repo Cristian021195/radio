@@ -21,7 +21,7 @@ export const Footer = () => {
         <footer className=''>
             <div className='row px-5'>
                 <div className='col-12 col-md-6 p-2 d-flex align-items-center'>
-                    <b className='wave d-flex align-items-center p-1'>Sonando: &nbsp; <Pulse paused={radio.radio ? radio.radio.paused : false} color={radio.radio.paused ? '#ababab' : '#eb0000'} height='0.5em' width='0.5em'/></b>
+                    <b className='wave d-flex align-items-center p-1'>Sonando: &nbsp; <Pulse paused={radio.radio ? radio.radio.paused : false} color={radio.radio.paused ? '#ababab' : '#eb0000'} height='0.5em' width='0.5em'/>&nbsp;</b>
                     &emsp;{selected?.selected?.nombre || 'Sin radio seleccionada'}</div>
                 <div className='col-12 col-md-6 p-2'>
                     <FooterPlayer/>
