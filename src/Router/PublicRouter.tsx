@@ -16,8 +16,7 @@ export const PublicRouter = () => {
   HeadTitleUrl(location.pathname, 'Inicio')
   return (
     <Routes>
-        <Route index element={<Inicio/>}></Route>
-        <Route path='/inicio' element={<Inicio/>}></Route>
+        <Route path='/' element={<Inicio/>}></Route>
         <Route path='/radios' element={<Radios/>}></Route>
         <Route path='/contacto' element={<Contacto/>}></Route>
     </Routes>
