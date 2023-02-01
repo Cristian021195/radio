@@ -22,14 +22,14 @@ export const RadioList = () => {
             e.preventDefault();
             dispatch({type: 'AGREGAR', payload:{radio:radioElement}})
         }} className='d-flex flex-wrap'>
-            <label className='w-100 d-flex justify-content-between align-items-center' htmlFor="nuevo">Nombre:
-                <input  required className='neuro-text' type="text" name='nombre' placeholder='Radio Rivadavia' onChange={(e)=>{setRadioElement({...radioElement, nombre: e.target.value})}}/>
+            <label className='w-100 d-flex justify-content-between align-items-center' htmlFor="nombre">Nombre:
+                <input  required className='neuro-text' type="text" name='nombre' id='nombre' placeholder='Radio Rivadavia' onChange={(e)=>{setRadioElement({...radioElement, nombre: e.target.value})}}/>
             </label>
-            <label className='w-100 d-flex justify-content-between align-items-center' htmlFor="nuevo">Url / Enlace / Link:
-                <input  required className='neuro-text'  type="text" name='url' placeholder='Ejemplo https://streaming:10352/stream' onChange={(e)=>{setRadioElement({...radioElement, url: e.target.value})}}/>
+            <label className='w-100 d-flex justify-content-between align-items-center' htmlFor="url">Url / Enlace / Link:
+                <input  required className='neuro-text'  type="text" name='url' id='url' placeholder='https://streaming01.shockmedia.com.ar:10307/stream' onChange={(e)=>{setRadioElement({...radioElement, url: e.target.value})}}/>
             </label>
-            <label className='w-100 d-flex justify-content-between align-items-center' htmlFor="nuevo">Url / Enlace / Link:
-                <input className='neuro-text' type="text" name='url_alt' placeholder='Ejemplo https://streaming:10352/stream' onChange={(e)=>{setRadioElement({...radioElement, url_alt: e.target.value})}}/>
+            <label className='w-100 d-flex justify-content-between align-items-center' htmlFor="social">Web / Red Social:
+                <input className='neuro-text' type="text" name='url_alt' id='social' placeholder='https://www.facebook.com/los40tucuman961' onChange={(e)=>{setRadioElement({...radioElement, social: e.target.value, url_alt: e.target.value})}}/>
             </label>
             <div className='d-flex justify-content-center w-100 m-2'>
                 <button type="submit" className='btn p-2' style={{backgroundColor:'orange', color:'whitesmoke'}}>Agregar</button>
