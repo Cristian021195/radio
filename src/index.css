@@ -216,6 +216,9 @@ table tr td, table tr th{
   .radio-list{
     margin-bottom: 15em;
   }
+  footer{
+    bottom:-7em;
+  }
 }
 
 
